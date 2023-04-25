@@ -21,6 +21,8 @@ module load <%= context.modules %>
 module list
 <%- end -%>
 
+source activate <%= context.conda_env%>
+
 # Benchmark info
 echo "TIMING - Starting jupyter at: $(date)"
 

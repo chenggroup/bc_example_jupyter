@@ -8,7 +8,7 @@
 # under /etc/ood/config/clusters.d/*.yml
 # @example Use the Owens cluster at Ohio Supercomputer Center
 #     cluster: "owens"
-cluster: ""
+cluster: "chenglabhpc"
 
 # Define attribute values that aren't meant to be modified by the user within
 # the Dashboard form
@@ -25,7 +25,15 @@ attributes:
   #     modules: "python/3.5"
   # @example Using combination of modules
   #     modules: "python/3.5 cuda/8.0.44"
-  modules: "python"
+  bc_num_slots: 1
+  modules: 
+    value: "miniconda/3"
+  bc_queue:
+    value: "fat"
+  conda_env: 
+    label: "Conda environment"
+    value: "base"
+    type: "text"
 
   # Any extra command line arguments to feed to the `jupyter notebook ...`
   # command that launches the Jupyter notebook within the batch job
@@ -43,6 +51,7 @@ attributes:
 form:
   - modules
   - extra_jupyter_args
+  - conda_env
   - bc_account
   - bc_queue
   - bc_num_hours
