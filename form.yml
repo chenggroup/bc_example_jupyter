@@ -25,9 +25,14 @@ attributes:
   #     modules: "python/3.5"
   # @example Using combination of modules
   #     modules: "python/3.5 cuda/8.0.44"
-  bc_num_slots: 1
   modules: 
     value: "miniconda/3"
+  num_cores:
+    widget: "number_field"
+    label: "Number of cores"
+    value: 2
+    min: 1
+    step: 1
   bc_queue:
     value: "fat"
   conda_env: 
@@ -52,8 +57,7 @@ form:
   - modules
   - extra_jupyter_args
   - conda_env
+  - num_cores
   - bc_account
   - bc_queue
   - bc_num_hours
-  - bc_num_slots
-  - bc_email_on_started
