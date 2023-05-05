@@ -25,7 +25,7 @@ attributes:
   #     modules: "python/3.5"
   # @example Using combination of modules
   #     modules: "python/3.5 cuda/8.0.44"
-  modules: 
+  modules:
     value: "miniconda/3"
   num_cores:
     widget: "number_field"
@@ -35,10 +35,14 @@ attributes:
     step: 1
   bc_queue:
     value: "fat"
-  conda_env: 
+  conda_env:
     label: "Conda environment"
     value: "base"
     type: "text"
+  gpu_cards:
+    label: "Number of GPU cards"
+    help: "You need to select partitions with GPU cards or else the job will fail"
+    value: 0
 
   # Any extra command line arguments to feed to the `jupyter notebook ...`
   # command that launches the Jupyter notebook within the batch job
@@ -58,6 +62,7 @@ form:
   - extra_jupyter_args
   - conda_env
   - num_cores
+  - gpu_cards
   - bc_account
   - bc_queue
   - bc_num_hours

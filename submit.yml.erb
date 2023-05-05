@@ -29,9 +29,15 @@ batch_connect:
 #  accounting_id: "account1"
 #  email_on_started: true
 #  native: # ... array of command line arguments ...
+
+# if gpu_cards is greater than 0, then add gres options
+
 script:
   native:
     - "-N"
     - "1"
     - "-n"
     - "<%= num_cores %>"
+    <% if gpu_cards > 0 %>
+    - "--gres=gpu:<%= gpu_cards %>"
+    <% end %>
