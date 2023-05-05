@@ -39,6 +39,6 @@ script:
     - "1"
     - "-n"
     - "<%= num_cores %>"
-    <% if gpu_cards != "0" %>
+    <% if gpu_cards != "none" %>
     - "--gres=gpu:<%= gpu_cards %>"
     <% end %>

@@ -40,10 +40,18 @@ attributes:
     value: "base"
     type: "text"
   gpu_cards:
-    widget: "number_field"
-    label: "Number of GPU cards"
-    help: "You need to select partitions with GPU cards or else the job will fail"
-    value: 0
+    label: "GPU type:count"
+    help: |
+      The type and number of GPU cards to request for the job.
+      If you do not need a GPU card, just leave this field to `none`.
+
+      You don't need to specify the GPU type on `gpu1` and `gpu3`, just fill in the number of cards you need.
+      For example, `1`, `2`, ...
+
+      On `gpu2`, however, you need to specify the GPU type:count accordingly. For example,
+      `1g.10gb:1`, `a100:1`
+
+    value: "none"
 
   # Any extra command line arguments to feed to the `jupyter notebook ...`
   # command that launches the Jupyter notebook within the batch job
