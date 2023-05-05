@@ -40,6 +40,7 @@ attributes:
     value: "base"
     type: "text"
   gpu_cards:
+    widget: "number_field"
     label: "Number of GPU cards"
     help: "You need to select partitions with GPU cards or else the job will fail"
     value: 0
